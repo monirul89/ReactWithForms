@@ -1,48 +1,73 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-
+import { JSON_DB_URL } from '../config'
 
 class List extends Component{
 
     state={
-        news:[]
+        items:[],
+        type:this.props.type,
+        start:this.props.start,
+        end:this.props.start + this.props.amount,
+        amount: this.props.amount
     }
     componentWillMount(){
-        axios.get(`http://localhost:3004/articles`)
+        this.request(this.state.start, this.state.end)
+    }
+    request = (start, end)=>{
+        axios.get(`${JSON_DB_URL}/articles?_start=${this.state.start}&_end=${this.state.end}`)
         .then( response=>{
             this.setState({
-                news:response.data
+                items:[...this.state.items, ...response.data]
             })
         })
     }
-    showListHandler(){
-        
+    showHandler=()=>{
+        let end = this.state.end + this.state.amount;
+        this.request(this.state.end, end)
+    }
+    showListHandler(type){        
+        let template = null 
+        switch (type){
+            case('card'):
+            template = this.state.items.map( (item, i)=>(
+                <div>
+                    <div key={i} className="newslist_item">
+                        <h2>{item.title}</h2>
+                    </div>
+                </div>
+            ))
+            break;
+        default:
+            template=null
+        }
+        console.log(template)
+        return template;
     }
     render(){
-        console.log(this.state.news)
         var btnStyle ={
-                border: '1px solid #ccc',
-                padding: '10px',
-                margin: '10px auto',               
-                display: 'block',
-                cursor:'pointer',
-                width: '75px',
-                backgroundColor: 'azure',
-                borderRadius: '10px',
-                boxShadow: '0 2px 1px #dcdcdc'
-            }
+            border: '1px solid #ccc',
+            padding: '10px',
+            margin: '10px auto',               
+            display: 'block',
+            cursor:'pointer',
+            width: '75px',
+            backgroundColor: 'azure',
+            borderRadius: '10px',
+            boxShadow: '0 2px 1px #dcdcdc'
+        }
             
         return(
             <div>
                 <div>
-                    <div style={{clear:'both', overflow:'hidden'}}>
-
-                    </div>
                     <div>
                         <a style={btnStyle}
-                        onClick={this.showListHandler.bind(this)}
+                        onClick={()=> this.showHandler()}
                         >showMore</a>
+                    </div>
+                    <div style={{clear:'both', overflow:'hidden'}}>
+                        {this.showListHandler( this.props.type )}
                     </div>
                 </div>
             </div>

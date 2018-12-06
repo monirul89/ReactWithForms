@@ -6,7 +6,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <List />
+        <List 
+        type="card"
+        loadmore={true}
+        start={3}
+        amount={3}
+        />
       </div>
     );
   }
