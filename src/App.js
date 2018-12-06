@@ -9,6 +9,7 @@ class App extends Component {
         <List 
         type="card"
         loadmore={true}
+        dshow={false}
         start={3}
         amount={3}
         />

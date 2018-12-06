@@ -19,45 +19,46 @@
       "author": "typicode"
   }
 ],
-  "articles": [ {
+  "articles": [ 
+    {
       "id": 1,
-      "title": "json-articles",
+      "title": "json-articles title-1",
       "author": "typicode"
-  },
-  {
-      "id": 2,
-      "title": "json-articles",
-      "author": "typicode"
-  },
-  {
-    "id": 3,
-      "title": "json-articles",
-      "author": "typicode"
-  },
-  {
-    "id": 4,
-      "title": "json-articles",
-      "author": "typicode"
-  },
-  {
-    "id": 5,
-      "title": "json-articles",
-      "author": "typicode"
-  },
-  {
-    "id": 6,
-      "title": "json-articles",
-      "author": "typicode"
-  },
-  {
-    "id": 7,
-      "title": "json-articles",
-      "author": "typicode"
-  },
-  {
-    "id": 8,
-      "title": "json-articles",
-      "author": "typicode"
-  }
-]
+    },
+    {
+        "id": 2,
+        "title": "json-articles title-2",
+        "author": "typicode"
+    },
+    {
+      "id": 3,
+        "title": "json-articles title-3",
+        "author": "typicode"
+    },
+    {
+      "id": 4,
+        "title": "json-articles title-4",
+        "author": "typicode"
+    },
+    {
+      "id": 5,
+        "title": "json-articles title-5",
+        "author": "typicode"
+    },
+    {
+      "id": 6,
+        "title": "json-articles title-6",
+        "author": "typicode"
+    },
+    {
+      "id": 7,
+        "title": "json-articles title-7",
+        "author": "typicode"
+    },
+    {
+      "id": 8,
+        "title": "json-articles title-8",
+        "author": "typicode"
+    }
+  ]
 }
