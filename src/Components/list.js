@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import { JSON_DB_URL } from '../config'
 
@@ -17,7 +18,7 @@ class List extends Component{
         this.request(this.state.start, this.state.end)
     }
     request = (start, end)=>{
-        axios.get(`${JSON_DB_URL}/articles`)
+        axios.get(`${JSON_DB_URL}/articles?_start=${this.state.start}&_end=${this.state.end}`)
         .then( response=>{
             this.setState({
                 items:[...this.state.items, ...response.data]
@@ -25,7 +26,7 @@ class List extends Component{
         })
     }
     showHandler=()=>{
-        let end = this.state.end + this.state.amount;
+        let end = this.state.end + 1;
         this.request(this.state.end, end)
     }
 
@@ -34,11 +35,18 @@ class List extends Component{
             switch (type){
                 case('card'):
                 template = this.state.items.map( (item, i)=>(
-                    <div>
-                        <div key={i} className="newslist_item">
-                            <h2>{item.title}</h2>
-                        </div>
-                    </div>
+                    <CSSTransition
+                        key={i}
+                        timein={0}
+                        timeout={500}
+                        classNames="fade fade"
+                    >
+                            <div>
+                                <div key={i} className="newslist_item">
+                                    <h2>{item.title}</h2>
+                                </div>
+                            </div>
+                    </CSSTransition>
                 ))
                 break;
             default:
@@ -64,7 +72,9 @@ class List extends Component{
             <div>
                 <div>
                     <div style={{clear:'both', overflow:'hidden'}}>
-                        {this.showListHandler( this.props.type )}
+                        <TransitionGroup className="todo-list">
+                            {this.showListHandler( this.props.type )}
+                        </TransitionGroup>
                         <div>
                             <a style={btnStyle}
                             onClick={()=> this.showHandler()}
