@@ -28,8 +28,8 @@ class Controlled extends Component{
                         <label>Enter Name : </label>
                         <input 
                             type="text"
-                            placeholder={this.state.fname}
-                            value={this.state.fname}
+                            placeholder={this.state.name}
+                            value={this.state.name}
                             onChange={this.handlefNameChange}
                         />
                     </div>
