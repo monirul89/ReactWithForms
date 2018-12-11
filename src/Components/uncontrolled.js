@@ -6,8 +6,24 @@ class Uncontrolled extends Component{
     }
     render(){
         return(
-            <div>
-                Uncontrolled
+            <div className="container">
+                <form>
+                    <div className="form_element">
+                        <label>Enter Name : </label>
+                        <input 
+                            type="text"
+                            
+                        />
+                    </div>
+
+                    <div className="form_element">
+                        <label>Enter Name : </label>
+                        <input 
+                            type="text"
+                            
+                        />
+                    </div>
+                </form>
             </div>
         )
     }

@@ -5,8 +5,8 @@ class Controlled extends Component{
         super(props)
 
         this.state={
-            name: 'ABC',
-            lname: 'XYZ'
+            name: '',
+            lname: ''
         }
         this.handlefNameChange = this.handlefNameChange.bind(this)
     }
