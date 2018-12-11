@@ -1,0 +1,21 @@
+body{
+    color: #584b4b;
+}
+.container{
+    width:80%;
+}
+.form_element{
+    width: 130px;
+    line-height: 30px;
+    padding-bottom: 10px;
+}
+.form_element label{
+    display: block;
+    width: 100%;
+}
+.form_element input{
+    display: block;
+    width: 100%;
+    border: 1px solid #cdcdcd;
+    padding: 2px 5px;
+}
