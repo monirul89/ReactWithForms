@@ -23,6 +23,7 @@ class Uncontrolled extends Component{
                             
                         />
                     </div>
+                    <button>Button</button>
                 </form>
             </div>
         )
