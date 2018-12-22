@@ -43,6 +43,7 @@ class Controlled extends Component{
                             onChange={this.handlelNameChange}
                         />
                     </div>
+                    <button>Button</button>
                 </form>
             </div>
         )
