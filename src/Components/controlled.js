@@ -21,7 +21,12 @@ class Controlled extends Component{
         })
     }
     showMassage(){
-        alert('MMMM')
+        alert(
+            this.setState({
+                name:event.target.value,
+                lname:event.target.value
+            })
+        )
     }
     render(){
         return(
