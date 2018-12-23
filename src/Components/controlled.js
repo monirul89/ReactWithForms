@@ -5,8 +5,8 @@ class Controlled extends Component{
         super(props)
 
         this.state={
-            name: '',
-            lname: ''
+            name: 'm',
+            lname: 'm'
         }
         this.handlefNameChange = this.handlefNameChange.bind(this)
     }
@@ -20,7 +20,7 @@ class Controlled extends Component{
             lname:event.target.value
         })
     }
-    showMassage(){
+    showMassage(event){
         alert(
             this.setState({
                 name:event.target.value,
@@ -51,7 +51,7 @@ class Controlled extends Component{
                             onChange={this.handlelNameChange}
                         />
                     </div>
-                    <button onClick={this.showMassage}>Button</button>
+                    <button onClick={this.showMassage.bind(this)}>Button</button>
                 </form>
             </div>
         )
