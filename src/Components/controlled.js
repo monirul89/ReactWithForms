@@ -20,6 +20,9 @@ class Controlled extends Component{
             lname:event.target.value
         })
     }
+    showMassage(){
+        alert('MMMM')
+    }
     render(){
         return(
             <div className="container">
@@ -43,7 +46,7 @@ class Controlled extends Component{
                             onChange={this.handlelNameChange}
                         />
                     </div>
-                    <button>Button</button>
+                    <button onClick={this.showMassage}>Button</button>
                 </form>
             </div>
         )
