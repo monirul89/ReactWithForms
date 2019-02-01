@@ -28,7 +28,8 @@ class Controlled extends Component{
                         <label>Enter Name : </label>
                         <input 
                             type="text"
-                            placeholder={this.state.name}
+                            // placeholder={this.state.name}
+                            placeholder="Enter Name"
                             value={this.state.name}
                             onChange={this.handlefNameChange}
                         />
@@ -38,7 +39,8 @@ class Controlled extends Component{
                         <label>Enter Email : </label>
                         <input 
                             type="text"
-                            placeholder={this.state.email}
+                            // placeholder={this.state.email}
+                            placeholder="Enter Email"
                             value={this.state.email}
                             onChange={this.handleEmailChange}
                         />
