@@ -12,14 +12,15 @@ class Uncontrolled extends Component{
                         <label>Enter Name : </label>
                         <input 
                             type="text"
-                            
+                            placeholder="Enter Name"
                         />
                     </div>
 
                     <div className="form_element">
-                        <label>Enter Name : </label>
+                        <label>Enter Email : </label>
                         <input 
                             type="text"
+                            placeholder="Enter Email"
                             
                         />
                     </div>

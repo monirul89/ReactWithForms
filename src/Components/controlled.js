@@ -6,7 +6,7 @@ class Controlled extends Component{
 
         this.state={
             name: '',
-            lname: ''
+            email: ''
         }
         this.handlefNameChange = this.handlefNameChange.bind(this)
     }
@@ -15,9 +15,9 @@ class Controlled extends Component{
             name:event.target.value
         })
     }
-    handlelNameChange = (event)=>{
+    handleEmailChange = (event)=>{
         this.setState({
-            lname:event.target.value
+            email:event.target.value
         })
     }
     render(){
@@ -35,12 +35,12 @@ class Controlled extends Component{
                     </div>
 
                     <div className="form_element">
-                        <label>Enter Name : </label>
+                        <label>Enter Email : </label>
                         <input 
                             type="text"
-                            placeholder={this.state.lname}
-                            value={this.state.lname}
-                            onChange={this.handlelNameChange}
+                            placeholder={this.state.email}
+                            value={this.state.email}
+                            onChange={this.handleEmailChange}
                         />
                     </div>
                     <button>Button</button>
